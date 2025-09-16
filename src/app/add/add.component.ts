@@ -40,6 +40,7 @@ export class Add {
       name: formValue.name,
       address: formValue.address,
       category: formValue.category,
+      imageUrl: formValue.image,
       latitude: parseFloat(formValue.latitude),
       longitude: parseFloat(formValue.longitude)
     };

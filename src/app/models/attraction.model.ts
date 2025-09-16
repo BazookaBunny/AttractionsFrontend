@@ -13,4 +13,5 @@ export interface Attraction {
   category: string;
   latitude: number;
   longitude: number;
+  imageUrl: string;
 }

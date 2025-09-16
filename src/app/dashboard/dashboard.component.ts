@@ -74,6 +74,8 @@ export class Dashboard implements AfterViewInit {
         `
         <strong>${a.name}</strong>
         <br>
+        <img src="${a.imageUrl}" alt="${a.name}" style="width:100%; height:auto; max-width:300px; margin-bottom:8px;">
+        <br>
         ${a.address || ''}
         `
       );
