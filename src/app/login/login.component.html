@@ -1,0 +1,10 @@
+<div class="container" style="padding: 1rem; max-width: 400px;">
+  <h2>Login Page</h2>
+
+  <input type="text" placeholder="Username" class="form-control" [(ngModel)]="username" name="username" />
+
+  <br />
+
+  <input type="password" placeholder="Password" class="form-control" [(ngModel)]="password" name="password" />
+  <button class="btn btn-success btn-lg mt-3 w-100" (click)="handleLogin()">Login</button>
+</div>

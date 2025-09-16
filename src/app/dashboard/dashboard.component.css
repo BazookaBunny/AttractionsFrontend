@@ -1,0 +1,183 @@
+/* Shell positions the map and the floating toolbar */
+.map-shell {
+  position: relative;
+}
+
+/* Full-bleed map */
+.map {
+  height: 78vh;
+  min-height: 480px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Toggle button at top-right */
+.toolbar-toggle {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1100;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+  padding: 0;
+  font-size: 20px;
+  display: none;
+}
+
+/* Right sidebar */
+.right-toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1090;
+  width: 320px;
+  max-width: 90vw;
+  background: #fff;
+  border-left: 1px solid #e5e7eb;
+  transform: translateX(100%);
+  transition: transform 180ms ease;
+  display: none;
+  flex-direction: column;
+}
+
+/* Open state */
+.right-toolbar.open {
+  transform: translateX(0);
+  display: flex;
+}
+
+/* Header */
+.toolbar-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+/* Scroll body */
+.toolbar-body {
+  padding: 12px 14px 16px;
+  overflow: auto;
+}
+
+/* Legend dots */
+.legend {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.dot-rest {
+  background: #0d6efd;
+}
+
+/* primary */
+.dot-museums {
+  background: #6f42c1;
+}
+
+/* purple */
+.dot-arch {
+  background: #fd7e14;
+}
+
+/* orange */
+.dot-parks {
+  background: #198754;
+}
+
+/* green */
+.dot-popular {
+  background: #dc3545;
+}
+
+/* red */
+.dot-churches {
+  background: #20c997;
+}
+
+/* teal */
+
+/* Active button color override for outline buttons */
+.btn-outline-primary.active {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Responsive: sidebar open by default on lg+, closed on small */
+@media (min-width: 992px) {
+  .right-toolbar {
+    transform: translateX(0);
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
+  .toolbar-toggle {
+    display: block;
+  }
+}
+
+.map-shell {
+  position: relative;
+  /* enables overlay positioning */
+}
+
+.map-loading-overlay {
+  position: absolute;
+  inset: 0;
+  /* top:0 right:0 bottom:0 left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.55);
+  /* subtle veil over map */
+  backdrop-filter: blur(1px);
+  /* optional: soft blur */
+  z-index: 1200;
+  /* above tile & markers */
+  border-radius: 12px;
+  /* match your .map radius if you have one */
+}
+
+
+/* top attraction */
+.top-card .rank-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.object-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: .375rem;
+  border-top-right-radius: .375rem;
+}

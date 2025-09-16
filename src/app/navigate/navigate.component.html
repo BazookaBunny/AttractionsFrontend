@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+
+  <a class="navbar-brand" routerLink="/dashboard"><img src="../../assets/logo.png"></a>
+
+  <ul class="navbar-nav mx-auto d-flex flex-row align-items-center gap-3">
+
+    <!-- <li class=" nav-item">
+      <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    </li> -->
+
+    @if(isAuthed()){
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/add" routerLinkActive="active">Add</a>
+    </li>
+    }
+
+    <li class="nav-item">
+      <ng-container *ngIf="isAuthed()">
+        <button class="logout" (click)="logout()">Logout</button>
+      </ng-container>
+    </li>
+
+    @if(isAuthed()){
+    <li class="nav-item">
+      <ng-template #loginLink>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </ng-template>
+    </li>
+    }
+
+  </ul>
+</nav>
+
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

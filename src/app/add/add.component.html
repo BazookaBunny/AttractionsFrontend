@@ -1,0 +1,31 @@
+<div class="container p-5">
+
+  <div>
+    <h1>Add Attraction</h1>
+  </div>
+
+  <form [formGroup]="dynamicForm" (ngSubmit)="submitForm()">
+    <input type="text" formControlName="name" placeholder="Name" class="form-control" name="name" />
+    <br />
+    <input type="text" formControlName="address" placeholder="Address" class="form-control" name="address" />
+    <br />
+    <input type="text" formControlName="category" placeholder="Category" class="form-control" name="category" />
+    <br />
+    <input type="number" formControlName="latitude" placeholder="Latitude" class="form-control" name="latitude" />
+    <br />
+    <input type="number" formControlName="longitude" placeholder="Longitude" class="form-control" name="longitude" />
+    <br />
+
+    <button type="submit" class="btn btn-primary" [disabled]="dynamicForm.invalid || loading">
+      {{
+      loading ? 'Adding...' : 'Add'
+      }}
+    </button>
+
+    @if(error){
+    <div class="text-danger mt-2">{{ error }}</div>
+    }
+
+  </form>
+
+</div>
