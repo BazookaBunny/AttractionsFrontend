@@ -28,6 +28,7 @@ export class Add {
     name: ['', [Validators.required]],
     address: ['', [Validators.required]],
     category: ['', [Validators.required]],
+    imageUrl: ['', [Validators.required]],
     latitude: ['', [Validators.required]],
     longitude: ['', [Validators.required]],
   });
@@ -40,7 +41,7 @@ export class Add {
       name: formValue.name,
       address: formValue.address,
       category: formValue.category,
-      imageUrl: formValue.image,
+      imageUrl: formValue.imageUrl,
       latitude: parseFloat(formValue.latitude),
       longitude: parseFloat(formValue.longitude)
     };
@@ -54,8 +55,8 @@ export class Add {
         this.router.navigate(['/dashboard']);
       },
 
-      error: () => {
-        this.error = "Failed to create attraction";
+      error: (e) => {
+        this.error = e.message;
       },
 
       complete: () => this.loading = false
