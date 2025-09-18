@@ -4,7 +4,17 @@ import { Attraction, Category } from '../models/attraction.model';
 import { AttractionsService } from '../services/attractions.service';
 import { FormsModule } from '@angular/forms';
 import { TOP_ATTRACTIONS, TopAttraction } from '../models/topAttraction.model';
+import 'leaflet/dist/leaflet.css';
 
+L.Marker.prototype.options.icon = L.icon({
+  iconUrl: '/assets/leaflet/marker-icon.png',
+  iconRetinaUrl: '/assets/leaflet/marker-icon-2x.png',
+  shadowUrl: '/assets/leaflet/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 @Component({
   selector: 'app-dashboard',
