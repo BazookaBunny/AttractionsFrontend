@@ -4,7 +4,6 @@ import { Attraction, Category } from '../models/attraction.model';
 import { AttractionsService } from '../services/attractions.service';
 import { FormsModule } from '@angular/forms';
 import { TOP_ATTRACTIONS, TopAttraction } from '../models/topAttraction.model';
-import 'leaflet/dist/leaflet.css';
 
 L.Marker.prototype.options.icon = L.icon({
   iconUrl: '/assets/leaflet/marker-icon.png',
